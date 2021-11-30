@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import Inputs from './components/Inputs';
 
 export default function App() {
           const [mapRegion, setmapRegion] = useState({
@@ -26,6 +27,7 @@ export default function App() {
           })();
           return (
                     <View style={styles.container}>
+                              <Inputs mapRegion={mapRegion} />
                               <MapView style={styles.map} >
                                         <Marker coordinate={mapRegion} title='Ma position' />
                               </MapView>
